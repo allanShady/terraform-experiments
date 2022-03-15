@@ -7,7 +7,7 @@ Experiments and learn Terraform
 - [x] Install terraform CLI
 - [x] Configure **AWS Profile** to be used by [**terraform**](https://www.terraform.io/) - `aws configure --profile terraform`
 - [x] Create an **aws instance** using tf
-- [] Create a VPC
+- [ ] Create a VPC
 
 ## 👨🏿‍💻 Commands
 
