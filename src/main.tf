@@ -3,6 +3,10 @@ provider "aws" {
   region  = "us-east-1"
 }
 
+variable "subnet_prefix" {
+  description = "cidr block for the subnet"
+}
+
 # 1. Create a VPC
 resource "aws_vpc" "dev-vpc" {
   cidr_block = "10.0.0.0/16"
@@ -37,11 +41,21 @@ resource "aws_route_table" "dev-route-table" {
 # 4. Create a Subnet
 resource "aws_subnet" "subnert-1" {
   vpc_id            = aws_vpc.dev-vpc.id
-  cidr_block        = "10.0.1.0/24"
+  cidr_block        = var.subnet_prefix[0].cidr_block
   availability_zone = "us-east-1a"
 
   tags = {
-    "Name" = "dev-subnet"
+    "Name" = var.subnet_prefix[0].name
+  }
+}
+
+resource "aws_subnet" "subnert-2" {
+  vpc_id            = aws_vpc.dev-vpc.id
+  cidr_block        = var.subnet_prefix[1].cidr_block
+  availability_zone = "us-east-1a"
+
+  tags = {
+    "Name" = var.subnet_prefix[1].name
   }
 }
 
