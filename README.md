@@ -1,4 +1,4 @@
-# 💡 terraform-experiments
+# 💡 Terraform Experiments
 
 Experiments and learn Terraform
 
@@ -7,7 +7,14 @@ Experiments and learn Terraform
 - [x] Install terraform CLI
 - [x] Configure **AWS Profile** to be used by [**terraform**](https://www.terraform.io/) - `aws configure --profile terraform`
 - [x] Create an **aws instance** using tf
-- [ ] Create a VPC
+- [x] Create a VPC
+- [ ] Terraform
+  - [ ] Files
+  - [ ] Backend
+  - [ ] State Command
+  - [ ] Output
+  - [ ] target Resource
+  - [ ] Variables
 
 ## 👨🏿‍💻 Commands
 
