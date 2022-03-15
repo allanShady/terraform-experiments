@@ -9,12 +9,12 @@ Experiments and learn Terraform
 - [x] Create an **aws instance** using tf
 - [x] Create a VPC
 - [ ] Terraform
-  - [ ] Files
+  - [x] Files
   - [ ] Backend
-  - [ ] State Command
-  - [ ] Output
-  - [ ] target Resource
-  - [ ] Variables
+  - [x] State Command
+  - [x] Output
+  - [x] target Resource
+  - [x] Variables
 
 ## 👨🏿‍💻 Commands
 
@@ -33,6 +33,25 @@ Experiments and learn Terraform
 
     # Destroy the created resources
     terraform -chdir=src destroy
+
+    # Terraform state
+    terraform -chdir=src state list # list all created/provisioned resources
+    terraform -chdir=src state show <resource-name> # Shows the given resource details
+
+    # Terraform output - lists the outputs
+    terraform -chdir=src output
+
+    # Terraform Refresh
+    terraform -chdir=src refresh
+
+    # target a specific resource
+    terraform -chdir=src <command> -target <provider-resource>.<resource-tf-name>
+
+    #Pass par on apply
+    terraform -chdir=src apply -var "subnet_prefix=10.0.100.0/24" -auto-approve
+
+    # using variables
+    terraform -chdir=src destroy -var-file variables-demo.tfvars   
 ```
 
 > For all command theres are `-chdir` flag to indicate where is the root folder. and `-auto-approve` to eliminate the need to the user explicitly accept the changes to be applied.
